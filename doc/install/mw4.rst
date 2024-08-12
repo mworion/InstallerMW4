@@ -79,15 +79,18 @@ be double click on it, in all other platforms you start it with:
 .. code-block:: python
 
     python startup.pyz  # Windows
-    python3 startup.pyz # Ubuntu and OSx
+    python3 startup.pyz # Ubuntu, ARM64 and OSx
 
 This script will prepare an virtual environment, install all necessary libraries
-- if applicable for arm plattforms (RPi's) also precompiled wheels and
+- if applicable for arm64 platforms (RPi's) also precompiled wheels and
 MountWizzard4 itself. After a successful installation, the script will start
 MountWizzard4 the first time. During this first run MountWizzard4 will create
 some subdirectories in your working folder. When starting, a splash screen shows
 the progress of it's initialization. After first start the directory should
 look like (example Windows)
+
+For newer MountWizzard4 versions, there is no need for precompiled wheels
+anymore as they are provided directly from PyPi.
 
 
 Remarks for installation
@@ -101,16 +104,14 @@ at any time.
     installation as the libraries and MountWizzard4 is installed from online
     sources.
 
-.. hint::
     Over time, there might be some improvements also made for these scripts.
     So if you had installed MountWizzard4 some time ago and will install new
     setups, it might be helpful to check if some new scripts are available for
     better handling. When running the script, it will check for updates and
     gives you some hints.
 
-.. hint::
-    The new script 4.x supports multiple platforms (Windows, MacOSx, ARM and x86
-    Linux distributions! Still for some you need to do some preparations.
+    The new script 4.x supports multiple platforms (Windows, MacOSx, ARM64 and
+    x86 Linux distributions! Still for some you need to do some preparations.
 
 
 Short videos for installation
