@@ -72,13 +72,12 @@ def install(venv_context, beta: bool = False, version_string: str = '') -> str:
     isV4 = Version('4.999') > version_app > Version('3.999')
 
     version_python = Version(platform.python_version())
-    compatibleV2 = version_python < Version('3.10')
     compatibleV3 = Version('3.8') <= version_python < Version('3.11')
     compatibleV4 = Version('3.9') <= version_python < Version('3.13')
 
-    if isV2 and not compatibleV2:
-        prt('MountWizzard4 v2.x needs python 3.7-3.9')
-        log.error('MountWizzard4 v2.x needs python 3.7-3.9')
+    if isV2:
+        prt('No installation of MountWizzard4 v2.x possible !')
+        log.error('User wanted to install < v3.0.0')
         return ''
 
     elif isV3 and not compatibleV3:

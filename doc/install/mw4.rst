@@ -18,7 +18,8 @@ On windows you can't call python3, but you have to run the command
 
 In one of the choices you should see the version number of the installed and
 available packages. For python it should say 3.8.x ... 3.12.x (depending on the
-version of MountWizzard4).
+version of MountWizzard4). Starting with InstallerMW4 version 4.x, the script
+does not support installing versions of MountWizzard4 < 3.0.0 anymore.
 
 .. hint::
     MountWizzard4 does not need admin rights to install or run. To avoid
