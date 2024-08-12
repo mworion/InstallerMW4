@@ -84,19 +84,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - mw4-version: '3.2.5'
+          - mw4-version: '3.2.6'
             python-version: '3.8'
-          - mw4-version: '3.2.5'
+          - mw4-version: '3.2.6'
             python-version: '3.9'
-          - mw4-version: '3.2.5'
+          - mw4-version: '3.2.6'
             python-version: '3.10'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.9'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.10'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.11'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.12'
     steps:
       - uses: actions/setup-python@v5
@@ -128,19 +128,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - mw4-version: '3.2.5'
+          - mw4-version: '3.2.6'
             python-version: '3.8'
-          - mw4-version: '3.2.5'
+          - mw4-version: '3.2.6'
             python-version: '3.9'
-          - mw4-version: '3.2.5'
+          - mw4-version: '3.2.6'
             python-version: '3.10'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.9'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.10'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.11'
-          - mw4-version: '4.0.0a1'
+          - mw4-version: '4.0.0a17'
             python-version: '3.12'
     steps:
       - uses: actions/setup-python@v5
