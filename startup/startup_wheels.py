@@ -41,7 +41,6 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
             ],
             '3.10': [
                 'PyQt5_sip-12.11.1-cp310-cp310-linux_aarch64.whl',
-                'PyQt5-5.15.9-cp37-abi3-manylinux_2_17_aarch64.whl',
                 'PyQt5-5.15.9-cp38.cp39.cp310-abi3-manylinux_2_17_aarch64.whl',
             ],
         },
