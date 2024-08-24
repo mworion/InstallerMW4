@@ -19,11 +19,10 @@
 import sys
 import platform
 import argparse
-from startup_logging import setup_logging, add_logging_level, log
+from startup_logging import setup_logging, log
 from startup_helper import install_basic_packages
 
 setup_logging()
-add_logging_level('HEADER', 55)
 
 if platform.system() == 'Windows':
     py = 'python'

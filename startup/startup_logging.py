@@ -59,31 +59,6 @@ class LoggerWriter:
         pass
 
 
-def add_logging_level(level_name, level_num, method_name=None):
-    """    
-    :param level_name:
-    :param level_num:
-    :param method_name:
-    :return: 
-    """
-    if not method_name:
-        method_name = level_name.lower()
-    if hasattr(logging, level_name):
-        return
-    if hasattr(logging, method_name):
-        return
-    if hasattr(logging.getLoggerClass(), method_name):
-        return
-
-    def logForLevel(self, message, *args, **kwargs):
-        if self.isEnabledFor(level_num):
-            self._log(level_num, message, args, **kwargs)
-
-    logging.addLevelName(level_num, level_name)
-    setattr(logging, level_name, level_num)
-    setattr(logging.getLoggerClass(), method_name, logForLevel)
-
-
 def setup_logging() -> None:
     """
     setup_logging defines the logger and formats and disables unnecessary
@@ -110,5 +85,6 @@ def setup_logging() -> None:
                         )
     logging.getLogger('requests').setLevel(logging.WARNING)
     logging.getLogger('urllib3').setLevel(logging.WARNING)
+
     # transfer all sys outputs to logging
     sys.stderr = LoggerWriter(logging.getLogger().error, 'STDERR', sys.stderr)

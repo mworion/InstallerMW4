@@ -57,15 +57,10 @@ def download_and_install_wheels(venv_context, version: Version) -> bool:
         versionKey = '3.0.0'
         log.info('Path version 3.x.y')
 
-    elif Version('4.999') > version > Version('3.999'):
-        log.info('Path version 4.x.y')
+    elif version > Version('3.999'):
+        log.info('Path version 4.x.y or later')
         prt('No precompiled packages for this version needed')
         return True
-
-    else:
-        log.info('No supported version')
-        prt('...no supported version')
-        return False
 
     ver = f'{sys.version_info[0]}.{sys.version_info[1]}'
     for item in wheels[versionKey][ver]:
