@@ -5,6 +5,12 @@ detailed changes list, please refer to the commit list on GitHub.
 
 Unreleased versions of scripts
 ------------------------------
+4.0.1
+
+- adding verbose option to get outputs during install
+- refactor code to simplify
+
+
 4.0
 
 - rewrite an separation to app itself.

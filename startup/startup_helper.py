@@ -25,17 +25,12 @@ version = "4.0.1"
 
 
 def prt(*args) -> None:
-    """
-    :param args:
-    :return:
-    """
+    """ """
     print("    ", *args)
 
 
 def clean_system(python_string: str = "python") -> None:
-    """
-    :return:
-    """
+    """ """
     prt("Clean system site-packages")
     prt("...takes some time")
     ret = os.popen(f"{python_string} -m pip freeze > clean.txt").read()

@@ -8,7 +8,14 @@ a standard python3 environment. Ideally it is recommended in a virtualenv.
 
 The first step is to install the appropriate python3 package if not already
 installed. For all platforms installer are available. Please look here:
-https://www.python.org/downloads/
+
+.. image:: image/python_org.png
+    :align: center
+    :scale: 71%
+
+And the link to the python website: https://www.python.org.
+
+
 
 Please follow the descriptions that comes with the installers. To give
 a short overview here are some quick installation hints for all platforms.
@@ -24,7 +31,8 @@ and go directly to the MountWizzard4 installation process. If you have to
 install python3 this has to be done only once for as many MountWizzard4
 installations you might want.
 
-There is a video on youtube with the install process python: https://youtu.be/xJxpx_SmrVc.
+There are videos for multiple use cases on the youtube channel:
+https://www.youtube.com/channel/UCJD-5qdLEcBTCugltqw1hXA
 
 .. note::
     On windows there are some new features which supports comet, earth rotation
@@ -33,10 +41,11 @@ There is a video on youtube with the install process python: https://youtu.be/xJ
     upgrade an older python installation, please see the comments below for
     windows. On other OS there is no need for doing that.
 
+    The actual recommended python version for MountWizzard4 is 3.10.
 
 Windows Platform
 ----------------
-.. warning::
+.. note::
     Windows makes a hard split between 32bit and 64bit versions. If your drivers
     and setup uses 64bit solutions, please install 64bit python!
 
@@ -44,18 +53,27 @@ Depending on your Windows version please download the installer for python3 from
 
 https://www.python.org/downloads/windows/
 
+
+.. image:: image/python_windows.png
+    :align: center
+    :scale: 71%
+
+.. image:: image/python_310.png
+    :align: center
+    :scale: 71%
+
 and follow the installation procedure.
 
 .. hint::
-    Please take care that during the installation the checkbox "Add Python Path"
-    is selected and to install for a single user if you want to use the scripts.
+    Please take care that during the installation the checkbox "Add Python.exe
+    to Path" is selected and to install for a single user if you want to use the
+    scripts.
 
 .. image:: image/python_win_path.png
     :align: center
     :scale: 71%
 
-Depending on your preference you could install python3 for a single user or
-for all users. MountWizzard4 does not need admin rights to run!
+MountWizzard4 does not need admin rights to run!
 
 Mac OSx platform
 ----------------

@@ -36,26 +36,30 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'InstallerMW4'
-copyright = '2024, mworion'
-author = 'Michael Würtenberger'
+project = "InstallerMW4"
+copyright = "2024, mworion"
+author = "Michael Würtenberger"
 
 # The full version, including alpha/beta/rc tags
-version = '4.0.0'
-release = '4.0.0'
-master_doc = 'index'
+version = "4.0.0"
+release = "4.0.0"
+master_doc = "index"
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel',
-              'sphinx.ext.githubpages', 'sphinxcontrib.drawio',
-              'sphinx_simplepdf', 'sphinx_copybutton']
+extensions = [
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.githubpages",
+    "sphinxcontrib.drawio",
+    "sphinx_simplepdf",
+    "sphinx_copybutton",
+]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -67,39 +71,39 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = "alabaster"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
-pdf_documents = [('index', u'InstallerMW4', u'InstallerMW4', u'mworion')]
+pdf_documents = [("index", "InstallerMW4", "InstallerMW4", "mworion")]
 # index - master document
 
 html_theme_options = {
-    'logo': 'mw4.png',
-    'logo_name': True,
-    'fixed_sidebar': True,
-    'page_width': '1400px',
-    'sidebar_width': '300px',
-    'base_bg': '#FFFFFFFF',
-    'base_text': '#FFFFFFFF',
-    'body_bg': '#FFFFFFFF',
+    "logo": "mw4.png",
+    "logo_name": True,
+    "fixed_sidebar": True,
+    "page_width": "1400px",
+    "sidebar_width": "300px",
+    "base_bg": "#FFFFFFFF",
+    "base_text": "#FFFFFFFF",
+    "body_bg": "#FFFFFFFF",
 }
 
-simplepdf_file_name = 'InstallerMW4-' + version + '.pdf'
+simplepdf_file_name = "InstallerMW4-" + version + ".pdf"
 simplepdf_use_weasyprint_api = True
-simplepdf_weasyprint_flags = ['-v']
+simplepdf_weasyprint_flags = ["-v"]
 simplepdf_vars = {
-    'primary': 'rgb(32, 128, 208)',
-    'primary_opaque': '#186098',
-    'secondary': '#186098',
-    'cover': '#ffffff',
-    'white': '#ffffff',
-    'links': 'rgb(32, 128, 208)',
-    'cover-bg': 'url(mw4.png) no-repeat center',
-    'cover-overlay': 'rgba(32, 128, 208, 0.25)',
-    'top-left-content': 'counter(page)',
-    'bottom-center-content': 'version',
+    "primary": "rgb(32, 128, 208)",
+    "primary_opaque": "#186098",
+    "secondary": "#186098",
+    "cover": "#ffffff",
+    "white": "#ffffff",
+    "links": "rgb(32, 128, 208)",
+    "cover-bg": "url(mw4.png) no-repeat center",
+    "cover-overlay": "rgba(32, 128, 208, 0.25)",
+    "top-left-content": "counter(page)",
+    "bottom-center-content": "version",
 }

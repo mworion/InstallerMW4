@@ -33,20 +33,13 @@ class LoggerWriter:
     """ """
 
     def __init__(self, level, mode, std):
-        """
-        :param level:
-        :param mode:
-        :param std:
-        """
+        """ """
         self.level = level
         self.mode = mode
         self.standard = std
 
     def write(self, message):
-        """
-        :param message:
-        :return:
-        """
+        """ """
         first = True
         for line in message.rstrip().splitlines():
             if first:
@@ -56,16 +49,12 @@ class LoggerWriter:
                 self.level(" " * 9 + line.strip())
 
     def flush(self):
+        """ """
         pass
 
 
 def setup_logging() -> None:
-    """
-    setup_logging defines the logger and formats and disables unnecessary
-    library logging
-
-    :return: true for test purpose
-    """
+    """ """
     if not os.path.isdir("./log"):
         os.mkdir("./log")
 
