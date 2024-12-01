@@ -19,7 +19,6 @@
 import os
 import subprocess
 from startup_logging import log
-from __main__ import options
 
 version = "4.0.1"
 
@@ -50,8 +49,6 @@ def run(command) -> bool:
         for stdout_line in iter(process.stdout.readline, ""):
             if stdout_line:
                 log.info(stdout_line.strip("\n"))
-            if options.verbose:
-                print(stdout_line.strip("\n"))
         output = process.communicate(timeout=60)[0]
 
     except subprocess.TimeoutExpired as e:

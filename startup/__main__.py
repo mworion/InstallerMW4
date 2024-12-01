@@ -23,9 +23,8 @@ from startup_helper import install_basic_packages
 
 setup_logging()
 install_basic_packages()
-from startup import main
 
-global options
+from startup import main
 
 
 def read_options() -> argparse.Namespace:
@@ -98,18 +97,11 @@ def read_options() -> argparse.Namespace:
         dest="version",
         help="Update MountWizzard4 to the named version",
     )
-    parser.add_argument(
-        "--verbose",
-        default="",
-        type=str,
-        dest="verbose",
-        help="Show extended output on command line",
-    )
 
     options = parser.parse_args()
     log.debug(f"Options: {options}")
+    return options
 
 
-read_options()
-exit_code = main()
+exit_code = main(options=read_options())
 sys.exit(exit_code)

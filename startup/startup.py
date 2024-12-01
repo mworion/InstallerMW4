@@ -20,11 +20,11 @@ import os
 import sys
 import pathlib
 import platform
+import argparse
 from startup_helper import prt, clean_system
 from startup_env import run_python_in_venv, venv_create
 from startup_versions import version_script_online, version_script_local
 from startup_install import install, check_if_installed
-from __main__ import options
 
 
 def check_base_compatibility() -> bool:
@@ -59,7 +59,7 @@ def checking_app_start() -> bool:
     return True
 
 
-def main() -> int:
+def main(options: argparse.Namespace) -> int:
     """ """
     if not checking_app_start():
         return 1
