@@ -1,6 +1,5 @@
 Install MountWizzard4
 =====================
-
 When starting with the installation of MountWizzard4, python 3.8-3.10 for
 versions 3.x and python 3.9-3.12 for versions 4.x should be successful installed.
 To check, open a terminal (available on all platforms) and run the command
@@ -143,10 +142,9 @@ special videos showing a installation on different platforms.
 .. hlist::
     :columns: 1
 
-    * Windows10: https://youtu.be/q9WbiHhW5NU
+    * Windows10: https://youtu.be/Tzob8ZSnMH0
     * Mac OS Catalina: https://youtu.be/bbZ9_yLm1TU
     * Ubuntu 18.04: https://youtu.be/kNfLrtJtkq8
-
 
 
 If you see the upper window, you succeed and from now on you are able to
