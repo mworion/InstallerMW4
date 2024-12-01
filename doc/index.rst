@@ -48,6 +48,7 @@ flawless.
     :maxdepth: 2
 
     install/python
+    install/python_expert
     install/mw4
     install/platesolvers
     install/apple_silicon
