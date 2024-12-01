@@ -48,11 +48,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.8'
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.9'
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.10'
           - mw4-version: '4.0.0a19'
             python-version: '3.9'
@@ -84,11 +84,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.8'
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.9'
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.10'
           - mw4-version: '4.0.0a19'
             python-version: '3.9'
@@ -128,11 +128,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.8'
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.9'
-          - mw4-version: '3.2.6'
+          - mw4-version: '3.2.7'
             python-version: '3.10'
           - mw4-version: '4.0.0a19'
             python-version: '3.9'

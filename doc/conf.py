@@ -41,8 +41,8 @@ copyright = "2024, mworion"
 author = "Michael Würtenberger"
 
 # The full version, including alpha/beta/rc tags
-version = "4.0.0"
-release = "4.0.0"
+version = "4.0.1"
+release = "4.0.1"
 master_doc = "index"
 
 # -- General configuration ---------------------------------------------------
