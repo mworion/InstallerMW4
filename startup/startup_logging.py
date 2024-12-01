@@ -25,13 +25,13 @@ import datetime
 
 
 log = logging.getLogger()
-sys.stdout.reconfigure(encoding='utf-8')
-sys.stderr.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 
 class LoggerWriter:
-    """
-    """
+    """ """
+
     def __init__(self, level, mode, std):
         """
         :param level:
@@ -50,10 +50,10 @@ class LoggerWriter:
         first = True
         for line in message.rstrip().splitlines():
             if first:
-                self.level(f'[{self.mode}] ' + line.strip())
+                self.level(f"[{self.mode}] " + line.strip())
                 first = False
             else:
-                self.level(' ' * 9 + line.strip())
+                self.level(" " * 9 + line.strip())
 
     def flush(self):
         pass
@@ -66,25 +66,32 @@ def setup_logging() -> None:
 
     :return: true for test purpose
     """
-    if not os.path.isdir('./log'):
-        os.mkdir('./log')
+    if not os.path.isdir("./log"):
+        os.mkdir("./log")
 
     logging.Formatter.converter = time.gmtime
-    timeTag = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
-    logFile = f'./log/mw4-{timeTag}.log'
-    logHandler = RotatingFileHandler(logFile, mode='a', maxBytes=100 * 1024 * 1024,
-                                     backupCount=100, encoding=None, delay=False)
-    logging.basicConfig(level=logging.DEBUG,
-                        format='[%(asctime)s.%(msecs)03d]'
-                               '[%(levelname)1.1s]'
-                               '[%(filename)15.15s]'
-                               '[%(lineno)4s]'
-                               ' %(message)s',
-                        handlers=[logHandler],
-                        datefmt='%Y-%m-%d %H:%M:%S',
-                        )
-    logging.getLogger('requests').setLevel(logging.WARNING)
-    logging.getLogger('urllib3').setLevel(logging.WARNING)
+    timeTag = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    logFile = f"./log/mw4-{timeTag}.log"
+    logHandler = RotatingFileHandler(
+        logFile,
+        mode="a",
+        maxBytes=100 * 1024 * 1024,
+        backupCount=100,
+        encoding=None,
+        delay=False,
+    )
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format="[%(asctime)s.%(msecs)03d]"
+        "[%(levelname)1.1s]"
+        "[%(filename)15.15s]"
+        "[%(lineno)4s]"
+        " %(message)s",
+        handlers=[logHandler],
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+    logging.getLogger("requests").setLevel(logging.WARNING)
+    logging.getLogger("urllib3").setLevel(logging.WARNING)
 
     # transfer all sys outputs to logging
-    sys.stderr = LoggerWriter(logging.getLogger().error, 'STDERR', sys.stderr)
+    sys.stderr = LoggerWriter(logging.getLogger().error, "STDERR", sys.stderr)

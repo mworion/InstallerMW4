@@ -25,21 +25,20 @@ from startup_helper import version
 
 
 def version_app_online(update_beta: bool) -> Version:
-    """
-    """
-    url = f'https://pypi.python.org/pypi/mountwizzard4/json'
+    """ """
+    url = "https://pypi.python.org/pypi/mountwizzard4/json"
     try:
         response = requests.get(url).json()
     except Exception as e:
-        log.error(f'Cannot determine package version: {e}')
-        return Version('0.0.0')
+        log.error(f"Cannot determine package version: {e}")
+        return Version("0.0.0")
 
-    vPackage = list(response['releases'].keys())
+    vPackage = list(response["releases"].keys())
     vPackage.sort(key=Version, reverse=True)
-    verBeta = [x for x in vPackage if 'b' in x]
-    verRelease = [x for x in vPackage if 'b' not in x and 'a' not in x]
-    log.info(f'Package Beta:   {verBeta[:10]}')
-    log.info(f'Package Release:{verRelease[:10]}')
+    verBeta = [x for x in vPackage if "b" in x]
+    verRelease = [x for x in vPackage if "b" not in x and "a" not in x]
+    log.info(f"Package Beta:   {verBeta[:10]}")
+    log.info(f"Package Release:{verRelease[:10]}")
 
     if update_beta:
         app_version = Version(verBeta[0])
@@ -50,26 +49,24 @@ def version_app_online(update_beta: bool) -> Version:
 
 
 def version_app_local() -> Version:
-    """
-    """
-    with tarfile.open('mountwizzard4.tar.gz', 'r') as f:
+    """ """
+    with tarfile.open("mountwizzard4.tar.gz", "r") as f:
         for member in f.getmembers():
             if "PKG-INFO" in member.name:
                 pkg = f.extractfile(member.name)
-                with open('PKG_INFO', 'wb') as o:
+                with open("PKG_INFO", "wb") as o:
                     o.write(pkg.read())
-    version_string = '0.0.0'
-    with open('PKG_INFO', 'r') as f:
+    version_string = "0.0.0"
+    with open("PKG_INFO", "r") as f:
         for line in f.readlines():
-            if line.startswith('Version:'):
-                version_string = line.split(':')[1]
-    os.remove('PKG_INFO')
+            if line.startswith("Version:"):
+                version_string = line.split(":")[1]
+    os.remove("PKG_INFO")
     return Version(version_string)
 
 
 def get_app_version(is_test: bool, update_beta: bool, version_string: str) -> Version:
-    """
-    """
+    """ """
     if version_string:
         version_app = Version(version_string)
     elif is_test:
@@ -82,23 +79,21 @@ def get_app_version(is_test: bool, update_beta: bool, version_string: str) -> Ve
 
 
 def version_script_local() -> Version:
-    """
-    """
+    """ """
     return Version(version)
 
 
 def version_script_online() -> Version:
-    """
-    """
-    url = 'https://github.com/mworion/MountWizzard4/tree/main/support/startup.py'
+    """ """
+    url = "https://github.com/mworion/MountWizzard4/tree/main/support/startup.py"
     try:
         response = requests.get(url)
     except Exception as e:
-        log.error(f'Cannot determine script version: {e}')
-        return Version('0.0.0')
+        log.error(f"Cannot determine script version: {e}")
+        return Version("0.0.0")
 
-    for line in response.text.split('\n'):
-        if line.startswith('version ='):
-            version_string = line.split('=')[1].strip().strip('\'')
+    for line in response.text.split("\n"):
+        if line.startswith("version ="):
+            version_string = line.split("=")[1].strip().strip("'")
             return Version(version_string)
-    return Version('0.0.0')
+    return Version("0.0.0")

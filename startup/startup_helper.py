@@ -19,8 +19,9 @@
 import os
 import subprocess
 from startup_logging import log
+from __main__ import options
 
-version = '4.0.0'
+version = "4.0.1"
 
 
 def prt(*args) -> None:
@@ -28,59 +29,58 @@ def prt(*args) -> None:
     :param args:
     :return:
     """
-    print('    ', *args)
+    print("    ", *args)
 
 
-def clean_system(python_string: str = 'python') -> None:
+def clean_system(python_string: str = "python") -> None:
     """
     :return:
     """
-    prt('Clean system site-packages')
-    prt('...takes some time')
-    ret = os.popen(f'{python_string} -m pip freeze > clean.txt').read()
+    prt("Clean system site-packages")
+    prt("...takes some time")
+    ret = os.popen(f"{python_string} -m pip freeze > clean.txt").read()
     prt(ret)
-    ret = os.popen(f'{python_string} -m pip uninstall -y -r clean.txt').read()
+    ret = os.popen(f"{python_string} -m pip uninstall -y -r clean.txt").read()
     prt(ret)
-    prt('Clean finished')
-    log.info('Clean system site-packages finished')
+    prt("Clean finished")
+    log.info("Clean system site-packages finished")
 
 
 def run(command) -> bool:
-    """
-    """
+    """ """
     try:
-        process = subprocess.Popen(args=command,
-                                   stdout=subprocess.PIPE,
-                                   stderr=subprocess.STDOUT,
-                                   text=True)
+        process = subprocess.Popen(
+            args=command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
+        )
         for stdout_line in iter(process.stdout.readline, ""):
             if stdout_line:
-                log.info(stdout_line.strip('\n'))
+                log.info(stdout_line.strip("\n"))
+            if options.verbose:
+                print(stdout_line.strip("\n"))
         output = process.communicate(timeout=60)[0]
 
     except subprocess.TimeoutExpired as e:
         log.error(e)
         return False
     except Exception as e:
-        log.error(f'Error: {e} happened')
+        log.error(f"Error: {e} happened")
         return False
     else:
         retCode = process.returncode
 
-    success = (process.returncode == 0)
-    log.debug(f'Exit code:[{retCode}], message:[{output}], success:[{success}]')
+    success = process.returncode == 0
+    log.debug(f"Exit code:[{retCode}], message:[{output}], success:[{success}]")
     return success
 
 
-def install_basic_packages(python_string='python') -> None:
-    """
-    """
-    command = [python_string, '-m', 'pip', 'install', 'pip', '--upgrade']
+def install_basic_packages() -> None:
+    """ """
+    command = ["python", "-m", "pip", "install", "pip", "--upgrade"]
     run(command)
-    command = [python_string, '-m', 'pip', 'install', 'requests', '--upgrade']
+    command = ["python", "-m", "pip", "install", "requests", "--upgrade"]
     run(command)
-    command = [python_string, '-m', 'pip', 'install', 'wheel', '--upgrade']
+    command = ["python", "-m", "pip", "install", "wheel", "--upgrade"]
     run(command)
-    command = [python_string, '-m', 'pip', 'install', 'packaging', '--upgrade']
+    command = ["python", "-m", "pip", "install", "packaging", "--upgrade"]
     run(command)
-    log.info('Basic packages installed')
+    log.info("Basic packages installed")
