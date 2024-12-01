@@ -17,6 +17,7 @@
 #
 ###########################################################
 import sys
+import platform
 import argparse
 from startup_logging import setup_logging, log
 from startup_helper import install_basic_packages
@@ -24,6 +25,12 @@ from startup_helper import install_basic_packages
 setup_logging()
 install_basic_packages()
 
+if platform.system() == 'Windows':
+    py = 'python'
+else:
+    py = 'python3'
+
+install_basic_packages(python_string=py)
 from startup import main
 
 

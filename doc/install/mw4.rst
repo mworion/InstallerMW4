@@ -7,7 +7,7 @@ To check, open a terminal (available on all platforms) and run the command
 
 .. code-block:: python
 
-    python3 --version
+    python --version
     virtualenv --version
 
 On windows you can't call python3, but you have to run the command
