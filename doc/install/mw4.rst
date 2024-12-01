@@ -58,24 +58,44 @@ Step 2
 ------
 Download the **lastest** release of the installer script and unzip it's content
 to your work dir. You will find it here:
-https://github.com/mworion/InstallerMW4/releases
 
-In Windows10 for the first time you might be asked again for permission.
-
-.. image:: image/win_a.png
+.. image:: image/installer_main.png
     :align: center
     :scale: 71%
 
-Please accept this and follow the step the install marked in red.
+and there select the latest release:
 
-.. image:: image/win_b.png
+.. image:: image/installer_releases.png
     :align: center
     :scale: 71%
+
+Here is the direct link to the latest release: https://github.com/mworion/InstallerMW4/releases
+
+Please move the downloaded file to your work dir
+
+.. image:: image/downloaded.png
+    :align: center
+    :scale: 71%
+
+
+and unzip it there
+
+.. image:: image/extracted.png
+    :align: center
+    :scale: 71%
+
 
 Step 3
 ------
 Run the installer script, on windows you should be able to start the script just
-be double click on it, in all other platforms you start it with:
+be double click on it (you see the filetype is already linked to a python
+interpreter):
+
+.. image:: image/starting.png
+    :align: center
+    :scale: 71%
+
+in all other platforms you start it with:
 
 .. code-block:: python
 
