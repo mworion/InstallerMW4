@@ -20,7 +20,7 @@ import os
 import subprocess
 from startup_logging import log
 
-version = "4.0.1"
+version = "4.0.2"
 
 
 def prt(*args) -> None:
@@ -67,12 +67,12 @@ def run(command) -> bool:
 
 def install_basic_packages(python_string="python") -> None:
     """ """
-    command = [python_string, "-m", "pip", "install", "pip", "--upgrade"]
+    command = [python_string, "-m", "pip", "install", "pip", "--upgrade --break-system-packages"]
     run(command)
-    command = [python_string, "-m", "pip", "install", "requests", "--upgrade"]
+    command = [python_string, "-m", "pip", "install", "requests", "--upgrade --break-system-packages"]
     run(command)
-    command = [python_string, "-m", "pip", "install", "wheel", "--upgrade"]
+    command = [python_string, "-m", "pip", "install", "wheel", "--upgrade --break-system-packages"]
     run(command)
-    command = [python_string, "-m", "pip", "install", "packaging", "--upgrade"]
+    command = [python_string, "-m", "pip", "install", "packaging", "--upgrade --break-system-packages"]
     run(command)
     log.info("Basic packages installed")
