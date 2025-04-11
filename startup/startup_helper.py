@@ -67,12 +67,12 @@ def run(command) -> bool:
 
 def install_basic_packages(python_string="python") -> None:
     """ """
-    command = [python_string, "-m", "pip", "install", "pip", "--upgrade --break-system-packages"]
+    command = [python_string, "-m", "pip", "install", "pip", "--upgrade"]
     run(command)
-    command = [python_string, "-m", "pip", "install", "requests", "--upgrade --break-system-packages"]
+    command = [python_string, "-m", "pip", "install", "requests", "--upgrade"]
     run(command)
-    command = [python_string, "-m", "pip", "install", "wheel", "--upgrade --break-system-packages"]
+    command = [python_string, "-m", "pip", "install", "wheel", "--upgrade"]
     run(command)
-    command = [python_string, "-m", "pip", "install", "packaging", "--upgrade --break-system-packages"]
+    command = [python_string, "-m", "pip", "install", "packaging", "--upgrade"]
     run(command)
     log.info("Basic packages installed")

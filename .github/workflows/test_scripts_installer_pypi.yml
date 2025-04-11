@@ -39,7 +39,7 @@ on:
 jobs:
   
   install_windows:
-    runs-on: windows-latest
+    runs-on: windows-2022
     if: |
       ( github.event_name == 'workflow_run'  && github.event.workflow_run.conclusion == 'success' ) ||
       github.event_name == 'push'
@@ -80,7 +80,7 @@ jobs:
           python startup.pyz --no-start --version ${{ matrix.mw4-version }}
   
   install_ubuntu:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -125,7 +125,7 @@ jobs:
           python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
           
   install_macOS:
-    runs-on: macos-13
+    runs-on: macos-14
     strategy:
       fail-fast: false
       matrix:
