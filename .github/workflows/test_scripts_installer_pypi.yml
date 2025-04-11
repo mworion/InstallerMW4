@@ -76,6 +76,7 @@ jobs:
       - name: MountWizzard4 Install
         shell: cmd
         run: |
+          dir
           python startup.pyz --no-start --version ${{ matrix.mw4-version }}
   
   install_ubuntu:
@@ -120,6 +121,7 @@ jobs:
           
       - name: MountWizzard4 Install
         run: |
+          ls -la
           python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
           
   install_macOS:
@@ -155,4 +157,5 @@ jobs:
           
       - name: MountWizzard4 Install
         run: |
+          ls -la
           python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
