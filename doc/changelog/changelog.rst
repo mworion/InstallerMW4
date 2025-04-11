@@ -5,6 +5,14 @@ detailed changes list, please refer to the commit list on GitHub.
 
 Unreleased versions of scripts
 ------------------------------
+4.0.3
+
+- removing --break-system-packages
+
+4.0.2
+
+- adding support for python 3.12
+
 4.0.1
 
 - adding verbose option to get outputs during install
