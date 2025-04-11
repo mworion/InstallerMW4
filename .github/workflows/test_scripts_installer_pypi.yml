@@ -45,7 +45,7 @@ jobs:
       github.event_name == 'push'
 
     strategy:
-      fail-fast: false
+      fail-fast: True
       matrix:
         include:
           - mw4-version: '3.2.7'
@@ -54,6 +54,7 @@ jobs:
             python-version: '3.9'
           - mw4-version: '3.2.7'
             python-version: '3.10'
+            
           - mw4-version: '4.0.0a19'
             python-version: '3.9'
           - mw4-version: '4.0.0a19'
@@ -78,11 +79,15 @@ jobs:
         run: |
           dir
           python startup.pyz --no-start --version ${{ matrix.mw4-version }}
+          dir
+          cd log
+          more *.log
+          
   
   install_ubuntu:
     runs-on: ubuntu-22.04
     strategy:
-      fail-fast: false
+      fail-fast: True
       matrix:
         include:
           - mw4-version: '3.2.7'
@@ -91,6 +96,7 @@ jobs:
             python-version: '3.9'
           - mw4-version: '3.2.7'
             python-version: '3.10'
+            
           - mw4-version: '4.0.0a19'
             python-version: '3.9'
           - mw4-version: '4.0.0a19'
@@ -127,7 +133,7 @@ jobs:
   install_macOS:
     runs-on: macos-14
     strategy:
-      fail-fast: false
+      fail-fast: True
       matrix:
         include:
           - mw4-version: '3.2.7'
@@ -136,6 +142,7 @@ jobs:
             python-version: '3.9'
           - mw4-version: '3.2.7'
             python-version: '3.10'
+            
           - mw4-version: '4.0.0a19'
             python-version: '3.9'
           - mw4-version: '4.0.0a19'

@@ -39,13 +39,13 @@ on:
 jobs:
   
   install_package_aarch64:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: |
       ( github.event_name == 'workflow_run'  && github.event.workflow_run.conclusion == 'success' ) ||
       github.event_name == 'push'
     
     strategy:
-      fail-fast: false
+      fail-fast: True
       matrix:
         include:
           - arch: aarch64
