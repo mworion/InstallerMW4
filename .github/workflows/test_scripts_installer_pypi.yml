@@ -132,7 +132,47 @@ jobs:
           ls -la
           more *.log
           
-  install_macOS:
+  install_macOS_intel:
+    runs-on: macos-13
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - mw4-version: '3.2.7'
+            python-version: '3.8'
+          - mw4-version: '3.2.7'
+            python-version: '3.9'
+          - mw4-version: '3.2.7'
+            python-version: '3.10'
+            
+          - mw4-version: '4.0.0a19'
+            python-version: '3.9'
+          - mw4-version: '4.0.0a19'
+            python-version: '3.10'
+          - mw4-version: '4.0.0a19'
+            python-version: '3.11'
+          - mw4-version: '4.0.0a19'
+            python-version: '3.12'
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Script Install
+        uses: suisei-cn/actions-download-file@v1.6.0
+        with:
+          url: ${{ env.gh }}startup.pyz
+          target: .
+          
+      - name: MountWizzard4 Install
+        run: |
+          ls -la
+          python3 startup.pyz --no-start --version ${{ matrix.mw4-version }}
+          ls -la
+          cd log
+          more *.log
+          
+  install_macOS_ARM:
     runs-on: macos-14
     strategy:
       fail-fast: true
