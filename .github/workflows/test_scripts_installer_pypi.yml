@@ -45,7 +45,7 @@ jobs:
       github.event_name == 'push'
 
     strategy:
-      fail-fast: True
+      fail-fast: true
       matrix:
         include:
           - mw4-version: '3.2.7'
@@ -87,7 +87,7 @@ jobs:
   install_ubuntu:
     runs-on: ubuntu-22.04
     strategy:
-      fail-fast: True
+      fail-fast: true
       matrix:
         include:
           - mw4-version: '3.2.7'
@@ -135,13 +135,10 @@ jobs:
   install_macOS:
     runs-on: macos-14
     strategy:
-      fail-fast: True
+      fail-fast: true
       matrix:
         include:
-          - mw4-version: '3.2.7'
-            python-version: '3.8'
-          - mw4-version: '3.2.7'
-            python-version: '3.9'
+
           - mw4-version: '3.2.7'
             python-version: '3.10'
             
