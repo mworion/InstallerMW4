@@ -49,6 +49,7 @@ def run(command) -> bool:
         for stdout_line in iter(process.stdout.readline, ""):
             if stdout_line:
                 log.info(stdout_line.strip("\n"))
+                prt(stdout_line.strip("\n"))
         output = process.communicate(timeout=60)[0]
 
     except subprocess.TimeoutExpired as e:
