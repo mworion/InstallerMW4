@@ -95,3 +95,4 @@ def main(options: argparse.Namespace) -> int:
         prt("Install failed")
         prt()
         return 1
+    return 1
