@@ -5,6 +5,10 @@ detailed changes list, please refer to the commit list on GitHub.
 
 Unreleased versions of scripts
 ------------------------------
+4.0.4
+
+- MW4 v4 version is now python 3.10 - 3.13
+
 4.0.3
 
 - removing --break-system-packages
