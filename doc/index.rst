@@ -22,13 +22,13 @@ recommendations how to feed back.
           https://github.com/mworion/InstallerMW4/discussions
 
 
-In case of a bug report please have a good description (maybe a screenshot if it‘s
-related to GUI) and add the log file(s). Normally you just could drop the log file
-(or PNG in case of a screen shot) directly to the webpage issues on GitHub. In
-some cases GitHub does not accept the file format (unfortunately for example FITs
-files). I this case, please zip them and drop the zipped file. This will work. If
-you have multiple files, please don‘t zip them to one file! I need them separated
-and zipped causes more work.
+In case of a bug report please have a good description (maybe a screenshot if
+it‘s related to GUI) and add the log file(s). Normally you just could drop the
+log file (or PNG in case of a screen shot) directly to the webpage issues on
+GitHub. In some cases GitHub does not accept the file format (unfortunately for
+example FITs files). I this case, please zip them and drop the zipped file. This
+will work. If you have multiple files, please don‘t zip them to one file! I need
+them separated and zipped causes more work.
 
 If changes are made due to a feedback, new releases will have a link to the
 closed issues on GitHub.
