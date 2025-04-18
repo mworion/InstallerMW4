@@ -87,7 +87,7 @@ jobs:
   install_ubuntu:
     runs-on: ubuntu-22.04
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         include:
           - mw4-version: '3.2.7'
@@ -135,7 +135,7 @@ jobs:
   install_macOS_intel:
     runs-on: macos-13
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         include:
           - mw4-version: '3.2.7'
@@ -175,7 +175,7 @@ jobs:
   install_macOS_ARM:
     runs-on: macos-14
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         include:
           - mw4-version: '4.0.0a23'
