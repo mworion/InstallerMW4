@@ -20,7 +20,7 @@ import os
 import subprocess
 from startup_logging import log
 
-version = "4.1.0"
+version = "4.1.1"
 
 
 def prt(*args) -> None:

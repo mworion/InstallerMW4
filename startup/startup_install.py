@@ -50,7 +50,9 @@ def install_app(venv_context, version="", is_test=False):
 def check_if_installed(venv_context) -> tuple:
     """ """
     app_loader_search_path = venv_context.env_dir + "/lib/**/mw4/loader.py"
+    log.info(f"Loader path: {app_loader_search_path}")
     solutions = glob.glob(app_loader_search_path, recursive=True)
+    log.info(f"Result: {solutions}")
     is_installed = len(solutions) == 1
     if is_installed:
         loader_path = [solutions[0]]
