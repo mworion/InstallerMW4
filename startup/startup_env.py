@@ -39,18 +39,12 @@ class Envbuilder(venv.EnvBuilder):
     """ """
 
     def __init__(self, *args, **kwargs):
-        """
-        :param args:
-        :param kwargs:
-        """
+        """ """
         self.context = None
         super().__init__(*args, **kwargs)
 
     def post_setup(self, context):
-        """
-        :param context:
-        :return:
-        """
+        """ """
         self.context = context
         binPath = os.path.dirname(findfile(os.getcwd(), "activate")) + os.pathsep
         os.environ["PATH"] = binPath + os.environ["PATH"]
@@ -81,11 +75,7 @@ def get_os_version() -> str:
 
 
 def venv_create(venv_path, upgrade=False) -> Envbuilder:
-    """
-    :param venv_path:
-    :param upgrade:
-    :return:
-    """
+    """ """
     prt("-" * 45)
     prt("MountWizzard4")
     prt("-" * 45)

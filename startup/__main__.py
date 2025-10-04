@@ -23,7 +23,6 @@ from startup_logging import setup_logging, log
 from startup_helper import install_basic_packages
 
 setup_logging()
-install_basic_packages()
 
 if platform.system() == 'Windows':
     py = 'python'

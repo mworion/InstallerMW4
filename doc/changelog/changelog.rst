@@ -5,6 +5,11 @@ detailed changes list, please refer to the commit list on GitHub.
 
 Unreleased versions of scripts
 ------------------------------
+4.1.0
+
+- MW4 v4 version is now python 3.11 - 3.13
+- fix bug on linux
+
 4.0.6
 
 - MW4 v4 version is now python 3.10 - 3.13

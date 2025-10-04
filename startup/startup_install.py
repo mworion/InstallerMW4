@@ -70,7 +70,7 @@ def install(venv_context, beta: bool = False, version_string: str = "") -> str:
 
     version_python = Version(platform.python_version())
     compatibleV3 = Version("3.8") <= version_python < Version("3.11")
-    compatibleV4 = Version("3.10") <= version_python < Version("3.14")
+    compatibleV4 = Version("3.1") <= version_python < Version("3.14")
 
     if isV2:
         prt("No installation of MountWizzard4 v2.x possible !")
